@@ -30,7 +30,7 @@ h4 {
     --background: 0 0 13; /* #212121 */
     --foreground: 218 218 218; /* #dadada */
     --card: 55 57 64; /* #373940 */
-    --card-foreground: 218 218 218; /* #dadada */
+    --card-foreground: 48 48 48; /* #303030 */
     --popover: 55 57 64; /* #373940 */
     --popover-foreground: 218 218 218; /* #dadada */
     --primary: 16 163 127; /* #10a37f */
@@ -62,7 +62,7 @@ h4 {
     --background: 0 0 13; /* #212121 */
     --foreground: 218 218 218; /* #dadada */
     --card: 55 57 64; /* #373940 */
-    --card-foreground: 218 218 218; /* #dadada */
+    --card-foreground: 48 48 48; /* #303030 */
     --popover: 55 57 64; /* #373940 */
     --popover-foreground: 218 218 218; /* #dadada */
     --primary: 16 163 127; /* #10a37f */
@@ -97,3 +97,4 @@ h4 {
     @apply bg-background text-foreground;
   }
 }
+
