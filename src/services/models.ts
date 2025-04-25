@@ -35,6 +35,10 @@ export async function getModels(): Promise<AIModel[]> {
       id: 'leonardo-ai',
       name: 'Leonardo.ai',
       type: 'image',
+    },{
+      id: 'dalle-2',
+      name: 'Dalle-2',
+      type: 'image',
     },
   ];
 }

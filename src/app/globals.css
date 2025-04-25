@@ -1,9 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 body {
-  font-family: Inter var, system-ui, sans-serif;
+  font-family: Inter var, system-ui, sans-serif; /* Kept the original font as it matches the sans-serif style in the image */
   font-size: 16px;
   line-height: 1.5;
   font-weight: 400;
@@ -27,65 +28,65 @@ h4 {
 
 @layer base {
   :root {
-    --background: rgb(13, 15, 18); /* #0D0F12 */
-    --foreground: rgb(13, 15, 18); /* #DADADA */
-    --card: rgb(27, 29, 35); /* #1B1D23 */
-    --card-foreground: rgb(13,15,18); /* #DADADA */
-    --popover: rgb(27, 29, 35); /* #1B1D23 */
-    --popover-foreground: rgb(218, 218, 218); /* #DADADA */
-    --primary: rgb(94, 241, 242); /* #5EF1F2 */
-    --primary-foreground: rgb(13, 15, 18); /* #0D0F12 */
-    --secondary: rgb(145, 142, 255); /* #918EFF */
-    --secondary-foreground: rgb(13, 15, 18); /* #0D0F12 */
-    --muted: rgb(37, 39, 47); /* #25272F */
-    --muted-foreground: rgb(138, 142, 157); /* #8A8E9D */
-    --accent: rgb(94, 241, 242); /* #5EF1F2 */
-    --accent-foreground: rgb(13, 15, 18); /* #0D0F12 */
-    --destructive: rgb(231, 90, 90);  /* #E75A5A */
-    --destructive-foreground: rgb(0, 0, 100); /* #FFFFFF */
-    --border: rgb(42, 45, 53); /* #2A2D35 */
-    --input: rgb(37, 39, 47); /* #25272F */
-    --ring: rgb(94, 241, 242); /* #5EF1F2 */
+    --background: 210 14% 6%; /* Very dark almost black */
+    --foreground: 180 88% 66%; /* Neon blue/cyan for text */
+    --card: 228 12% 12%; /* Dark grey for cards/controls */
+    --card-foreground: 180 88% 66%; /* Neon blue */
+    --popover: 228 12% 12%; /* Dark grey */
+    --popover-foreground: 180 88% 66%; /* Neon blue */
+    --primary: 180 88% 66%; /* Neon blue/cyan for highlights */
+    --primary-foreground: 210 14% 6%; /* Dark text on primary */
+    --secondary: 240 100% 77%; /* Neon purple for secondary highlights */
+    --secondary-foreground: 210 14% 6%; /* Dark text on secondary */
+    --muted: 228 11% 16%; /* Slightly lighter dark grey for muted elements */
+    --muted-foreground: 220 14% 58%; /* Muted grey for muted text */
+    --accent: 180 88% 66%; /* Neon blue */
+    --accent-foreground: 210 14% 6%; /* Dark text on accent */
+    --destructive: 358 67% 63%;  /* Keep red for destructive */
+    --destructive-foreground: 0 0% 100%; /* Keep white for destructive text */
+    --border: 228 10% 19%; /* Dark grey border */
+    --input: 228 11% 16%; /* Dark grey input background */
+    --ring: 180 88% 66%; /* Neon blue ring for focus */
     --radius: 10px;
-    --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    --sidebar-background: rgb(13, 15, 18); /* #0D0F12 */
-    --sidebar-foreground: rgb(218, 218, 218); /* #DADADA */
-    --sidebar-primary: rgb(94, 241, 242); /* #5EF1F2 */
-    --sidebar-primary-foreground: rgb(13, 15, 18); /* #0D0F12 */
-    --sidebar-accent: rgb(27, 29, 35); /* #1B1D23 */
-    --sidebar-accent-foreground: rgb(218, 218, 218); /* #DADADA */
-    --sidebar-border: rgb(42, 45, 53); /* #2A2D35 */
-    --sidebar-ring: rgb(94, 241, 242); /* #5EF1F2 */
+    --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); /* Slightly stronger shadow */
+    --sidebar-background: 210 14% 6%; /* Very dark sidebar */
+    --sidebar-foreground: 180 88% 66%; /* Neon blue text */
+    --sidebar-primary: 180 88% 66%; /* Neon blue primary in sidebar */
+    --sidebar-primary-foreground: 210 14% 6%; /* Dark text */
+    --sidebar-accent: 228 12% 12%; /* Dark grey accent in sidebar */
+    --sidebar-accent-foreground: 180 88% 66%; /* Neon blue text */
+    --sidebar-border: 228 10% 19%; /* Dark grey border */
+    --sidebar-ring: 180 88% 66%; /* Neon blue ring */
   }
 
   .dark {
-    --background: rgb(13, 15, 18);
-    --foreground: rgb(218, 218, 218);
-    --card: rgb(27, 29, 35); 
-    --card-foreground: rgb(218, 218, 218);
-    --popover: rgb(27, 29, 35);
-    --popover-foreground: rgb(218, 218, 218);
-    --primary: rgb(94, 241, 242);
-    --primary-foreground: rgb(13, 16, 21);
-    --secondary: rgb(145, 142, 255);
-    --secondary-foreground: rgb(13, 15, 18); 
-    --muted: rgb(37, 39, 47);
-    --muted-foreground: rgb(138, 142, 157);
-    --accent: rgb(94, 241, 242);
-    --accent-foreground: rgb(13, 15, 18);
-    --destructive: rgb(231, 90, 90);
-    --destructive-foreground: rgb(0, 0, 100);
-    --border: rgb(42, 45, 53);
-    --input: rgb(37, 39, 47); 
-    --ring: rgb(94, 241, 242);
-    --sidebar-background: rgb(13, 15, 18);
-    --sidebar-foreground: rgb(218, 218, 218);
-    --sidebar-primary: rgb(94, 241, 242);
-    --sidebar-primary-foreground: rgb(13, 15, 18);
-    --sidebar-accent: rgb(27, 29, 35);
-    --sidebar-accent-foreground: rgb(218, 218, 218);
-    --sidebar-border: rgb(42, 45, 53);
-    --sidebar-ring: rgb(94, 241, 242);
+    --background: 210 14% 6%;
+    --foreground: 180 88% 66%;
+    --card: 228 12% 12%; 
+    --card-foreground: 180 88% 66%;
+    --popover: 228 12% 12%;
+    --popover-foreground: 180 88% 66%;
+    --primary: 180 88% 66%;
+    --primary-foreground: 210 14% 6%;
+    --secondary: 240 100% 77%;
+    --secondary-foreground: 210 14% 6%; 
+    --muted: 228 11% 16%;
+    --muted-foreground: 220 14% 58%;
+    --accent: 180 88% 66%;
+    --accent-foreground: 210 14% 6%;
+    --destructive: 358 67% 63%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 228 10% 19%;
+    --input: 228 11% 16%; 
+    --ring: 180 88% 66%;
+    --sidebar-background: 210 14% 6%;
+    --sidebar-foreground: 180 88% 66%;
+    --sidebar-primary: 180 88% 66%;
+    --sidebar-primary-foreground: 210 14% 6%;
+    --sidebar-accent: 228 12% 12%;
+    --sidebar-accent-foreground: 180 88% 66%;
+    --sidebar-border: 228 10% 19%;
+    --sidebar-ring: 180 88% 66%;
   }
 }
 
@@ -96,5 +97,29 @@ h4 {
   body {
     @apply bg-background text-foreground;
   }
-}
+  /* Added text shadow for neon effect to foreground text */
+  .text-foreground {
+    text-shadow: 
+      0 0 7px hsl(var(--foreground) / 0.6),
+      0 0 10px hsl(var(--foreground) / 0.5),
+      0 0 15px hsl(var(--foreground) / 0.4),
+      0 0 20px hsl(var(--foreground) / 0.3);
+  }
 
+  /* Add subtle glow to elements using primary/accent colors, e.g., buttons */
+  .bg-primary, .hover\:bg-primary,
+  .bg-accent, .hover\:bg-accent {
+    box-shadow: 
+      0 0 5px hsl(var(--primary) / 0.5),
+      0 0 8px hsl(var(--primary) / 0.4),
+      0 0 12px hsl(var(--primary) / 0.3);
+  }
+
+  /* Add subtle glow to elements using ring color, e.g., focus rings */
+  .focus-visible\:ring-ring {
+    box-shadow: 
+      0 0 0 2px hsl(var(--ring) / 0.6),
+      0 0 5px hsl(var(--ring) / 0.5),
+      0 0 8px hsl(var(--ring) / 0.4);
+  }
+}
