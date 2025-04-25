@@ -1,9 +1,7 @@
-// tagged for gh commit 24 apr 25
+import type { NextConfig } from 'next';
 
-import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -19,7 +17,9 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
-  },
+  }, output: 'export',
 };
+
+
 
 export default nextConfig;

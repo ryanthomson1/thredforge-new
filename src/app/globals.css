@@ -1,4 +1,3 @@
-// tagged for gh commit 24 apr 25
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -28,65 +27,65 @@ h4 {
 
 @layer base {
   :root {
-    --background: 0 0 13; /* #212121 */
-    --foreground: 218 218 218; /* #dadada */
-    --card: 55 57 64; /* #373940 */
-    --card-foreground: 48 48 48; /* #303030 */
-    --popover: 55 57 64; /* #373940 */
-    --popover-foreground: 218 218 218; /* #dadada */
-    --primary: 16 163 127; /* #10a37f */
-    --primary-foreground: 0 0 100; /* #fff */
-    --secondary: 55 57 64; /* #373940 */
-    --secondary-foreground: 218 218 218; /* #dadada */
-    --muted: 68 68 77; /* #44444d */
-    --muted-foreground: 142 142 147; /* #8e8e93 */
-    --accent: 16 163 127; /* #10a37f */
-    --accent-foreground: 0 0 100; /* #fff */
-    --destructive: 351 76 57; /* #e75a5a */
-    --destructive-foreground: 0 0 100; /* #fff */
-    --border: 68 68 77; /* #44444d */
-    --input: 55 57 64; /* #373940 */
-    --ring: 16 163 127; /* #10a37f */
+    --background: rgb(13, 15, 18); /* #0D0F12 */
+    --foreground: rgb(13, 15, 18); /* #DADADA */
+    --card: rgb(27, 29, 35); /* #1B1D23 */
+    --card-foreground: rgb(13,15,18); /* #DADADA */
+    --popover: rgb(27, 29, 35); /* #1B1D23 */
+    --popover-foreground: rgb(218, 218, 218); /* #DADADA */
+    --primary: rgb(94, 241, 242); /* #5EF1F2 */
+    --primary-foreground: rgb(13, 15, 18); /* #0D0F12 */
+    --secondary: rgb(145, 142, 255); /* #918EFF */
+    --secondary-foreground: rgb(13, 15, 18); /* #0D0F12 */
+    --muted: rgb(37, 39, 47); /* #25272F */
+    --muted-foreground: rgb(138, 142, 157); /* #8A8E9D */
+    --accent: rgb(94, 241, 242); /* #5EF1F2 */
+    --accent-foreground: rgb(13, 15, 18); /* #0D0F12 */
+    --destructive: rgb(231, 90, 90);  /* #E75A5A */
+    --destructive-foreground: rgb(0, 0, 100); /* #FFFFFF */
+    --border: rgb(42, 45, 53); /* #2A2D35 */
+    --input: rgb(37, 39, 47); /* #25272F */
+    --ring: rgb(94, 241, 242); /* #5EF1F2 */
     --radius: 10px;
-    --box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-    --sidebar-background: 33 33 33;
-    --sidebar-foreground: 218 218 218;
-    --sidebar-primary: 16 163 127;
-    --sidebar-primary-foreground: 0 0 100;
-    --sidebar-accent: 55 57 64;
-    --sidebar-accent-foreground: 0 0 100;
-    --sidebar-border: 68 68 77;
-    --sidebar-ring: 16 163 127;
+    --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --sidebar-background: rgb(13, 15, 18); /* #0D0F12 */
+    --sidebar-foreground: rgb(218, 218, 218); /* #DADADA */
+    --sidebar-primary: rgb(94, 241, 242); /* #5EF1F2 */
+    --sidebar-primary-foreground: rgb(13, 15, 18); /* #0D0F12 */
+    --sidebar-accent: rgb(27, 29, 35); /* #1B1D23 */
+    --sidebar-accent-foreground: rgb(218, 218, 218); /* #DADADA */
+    --sidebar-border: rgb(42, 45, 53); /* #2A2D35 */
+    --sidebar-ring: rgb(94, 241, 242); /* #5EF1F2 */
   }
 
   .dark {
-    --background: 0 0 13; /* #212121 */
-    --foreground: 218 218 218; /* #dadada */
-    --card: 55 57 64; /* #373940 */
-    --card-foreground: 48 48 48; /* #303030 */
-    --popover: 55 57 64; /* #373940 */
-    --popover-foreground: 218 218 218; /* #dadada */
-    --primary: 16 163 127; /* #10a37f */
-    --primary-foreground: 0 0 100; /* #fff */
-    --secondary: 55 57 64; /* #373940 */
-    --secondary-foreground: 218 218 218; /* #dadada */
-    --muted: 68 68 77; /* #44444d */
-    --muted-foreground: 142 142 147; /* #8e8e93 */
-    --accent: 16 163 127; /* #10a37f */
-    --accent-foreground: 0 0 100; /* #fff */
-    --destructive: 351 76 57; /* #e75a5a */
-    --destructive-foreground: 0 0 100; /* #fff */
-    --border: 68 68 77; /* #44444d */
-    --input: 55 57 64; /* #373940 */
-    --ring: 16 163 127; /* #10a37f */
-    --sidebar-background: 33 33 33;
-    --sidebar-foreground: 218 218 218;
-    --sidebar-primary: 16 163 127;
-    --sidebar-primary-foreground: 0 0 100;
-    --sidebar-accent: 55 57 64;
-    --sidebar-accent-foreground: 0 0 100;
-    --sidebar-border: 68 68 77;
-    --sidebar-ring: 16 163 127;
+    --background: rgb(13, 15, 18);
+    --foreground: rgb(218, 218, 218);
+    --card: rgb(27, 29, 35); 
+    --card-foreground: rgb(218, 218, 218);
+    --popover: rgb(27, 29, 35);
+    --popover-foreground: rgb(218, 218, 218);
+    --primary: rgb(94, 241, 242);
+    --primary-foreground: rgb(13, 16, 21);
+    --secondary: rgb(145, 142, 255);
+    --secondary-foreground: rgb(13, 15, 18); 
+    --muted: rgb(37, 39, 47);
+    --muted-foreground: rgb(138, 142, 157);
+    --accent: rgb(94, 241, 242);
+    --accent-foreground: rgb(13, 15, 18);
+    --destructive: rgb(231, 90, 90);
+    --destructive-foreground: rgb(0, 0, 100);
+    --border: rgb(42, 45, 53);
+    --input: rgb(37, 39, 47); 
+    --ring: rgb(94, 241, 242);
+    --sidebar-background: rgb(13, 15, 18);
+    --sidebar-foreground: rgb(218, 218, 218);
+    --sidebar-primary: rgb(94, 241, 242);
+    --sidebar-primary-foreground: rgb(13, 15, 18);
+    --sidebar-accent: rgb(27, 29, 35);
+    --sidebar-accent-foreground: rgb(218, 218, 218);
+    --sidebar-border: rgb(42, 45, 53);
+    --sidebar-ring: rgb(94, 241, 242);
   }
 }
 
