@@ -29,7 +29,7 @@ h4 {
 @layer base {
   :root {
     --background: 210 14% 6%; /* Very dark almost black */
-    --foreground: 180 88% 66%; /* Neon blue/cyan for text */
+    --foreground: 200 88% 66%; /* Neon blue/cyan for text */
     --card: 228 12% 12%; /* Dark grey for cards/controls */
     --card-foreground: 180 88% 66%; /* Neon blue */
     --popover: 228 12% 12%; /* Dark grey */
