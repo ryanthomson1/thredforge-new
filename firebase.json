@@ -1,5 +1,7 @@
 {
   "hosting": {
+    "site": "bearsocial",
+    "public": "public",
     "source": ".",
     "ignore": [
       "firebase.json",
