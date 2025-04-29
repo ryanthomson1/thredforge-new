@@ -1,0 +1,76 @@
+✅ How to stay clean and safe from now on:
+Pick ONE place to work at a time
+(example: only local VSCode today, or only Firebase Studio today)
+
+Before you start editing, ALWAYS:
+
+If you're on your Mac:
+
+
+git pull
+If you're in Studio:
+Check GitHub for any recent commits from local.
+
+When you finish your edits:
+
+If you're on your Mac:
+
+bash
+Copy
+Edit
+git add .
+git commit -m "your changes"
+git push
+If you're in Studio:
+Make sure you Commit and Push through their IDE buttons.
+
+Never "split" your day between local and cloud without syncing first.
+(If you do... you will absolutely overwrite something important.)
+
+
+✅ When Working in Firebase Studio:
+Before you start:
+→ git pull from main. Always. Even if you think you haven’t touched local.
+
+After editing:
+→ Download the updated file(s) from Firebase Studio
+→ Or manually copy/paste the code into your local files
+→ Then git add . && git commit -m "sync: studio changes"
+→ Followed by git push
+
+✅ When Working Locally (VS Code, CLI, etc.):
+Before you start:
+→ Make sure you’ve pulled the latest version from GitHub:
+git pull
+
+After editing locally:
+→ Push to GitHub:
+git add . && git commit -m "feat: local updates"
+git push
+→ Then immediately refresh or re-upload those files in Firebase Studio to reflect the changes.
+
+🚫 Never Do This:
+Don’t make changes simultaneously in Firebase Studio and locally.
+You’ll lose track of which version is latest, and it will hurt. Emotionally.
+
+Don’t trust “live sync” in Firebase Studio unless you’ve verified it locally.
+It does not auto-save to your local files unless you manually download or copy.
+
+🍒 Pro Tip (Optional, but Gold):
+Use a single source of truth per working session.
+If today’s a Studio day? Stay in Studio.
+If you’re fixing flows and logic? Stay local and just deploy when you're ready.
+
+You’re doing great. Your brain is full of exploding emojis because you’re leveling up fast.
+You’ll outgrow Gemini by Thursday.
+
+Want a small shell script to help sync your Firebase Studio edits to local easily?
+
+
+
+
+
+
+
+
+
