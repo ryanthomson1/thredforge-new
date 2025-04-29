@@ -1,21 +1,32 @@
-import { ChatCompletionRequestMessage } from "openai";
-import { callGemini } from "@/services/gemini";
+// src/ai/flows/generate.image-prompts.ts
+'use server';
 
-export interface GenerateImagePromptsInput {
-  threadPost: string;
-}
+import { defineFlow, definePrompt, run } from '@genkit-ai/flow';
+import { ai } from '@/ai/ai-instance';
+import { z } from 'genkit';
 
-/**
- * Generates 3 unique image prompts based on a thread post.
- * Each prompt will vary angle, lighting, setting, and include a playful or surreal element.
- * Returns a JSON-parsed array of prompt strings.
- */
-export async function generateImagePrompts(
-  { threadPost }: GenerateImagePromptsInput
-): Promise<string[]> {
-  // System instructions for the prompt-engineer LLM
-  const systemMessage = `
-You are a master prompt-engineer for a photo-realistic bear-man generator.
+// Input Schema
+type GenerateImagePromptsInput = z.infer<typeof GenerateImagePromptsInputSchema>;
+const GenerateImagePromptsInputSchema = z.object({
+  threadPost: z.string().describe('The content of the original Threads post or idea.')
+});
+
+// Output Schema
+type GenerateImagePromptsOutput = z.infer<typeof GenerateImagePromptsOutputSchema>;
+const GenerateImagePromptsOutputSchema = z.object({
+  imagePrompts: z.array(z.string()).describe('An array of generated image prompts.')
+});
+
+// AI Prompt Definition
+const generateImagePromptsPrompt = ai.definePrompt({
+  name: 'generateImagePromptsPrompt',
+  input: {
+    schema: GenerateImagePromptsInputSchema,
+  },
+  output: {
+    schema: GenerateImagePromptsOutputSchema,
+  },
+  prompt: `You are a master prompt-engineer for a photo-realistic bear-man generator.
 Input: a thread post idea (but never quote it).
 Produce exactly 3 unique image prompts—each one:
  • Focus on a cute, slightly chubby 40-year-old multi-ethnic man wearing a plush bear-costume headpiece
@@ -23,22 +34,35 @@ Produce exactly 3 unique image prompts—each one:
  • Vary lighting (golden hour, neon glow, dramatic side-light)
  • Place him in a scene tied to the post’s theme (coffee shop, street art alley, living room)
  • Include one playful or surreal element (floating bubbles, lens flares, graffiti text)
- • End with a standalone image description—no extra commentary, no direct quotes from the post
-Output as a JSON array of strings.
-  `.trim();
+ 
+Output a JSON object with a single key "imagePrompts" containing an array of standalone prompt strings.`
+});
 
-  const messages: ChatCompletionRequestMessage[] = [
-    { role: "system", content: systemMessage },
-    { role: "user", content: threadPost }
-  ];
+// Genkit Flow Definition
+const generateImagePromptsFlow = defineFlow<
+  typeof GenerateImagePromptsInputSchema,
+  typeof GenerateImagePromptsOutputSchema
+>({
+  name: 'generateImagePromptsFlow',
+  inputSchema: GenerateImagePromptsInputSchema,
+  outputSchema: GenerateImagePromptsOutputSchema,
+}, async (input: GenerateImagePromptsInput) => {
+  console.log('Running generateImagePromptsFlow with input:', input);
+  const { output } = await run(generateImagePromptsPrompt, input);
 
-  // Call Gemini (or your preferred LLM) to engineer prompts
-  const rawResponse = await callGemini({ messages });
-
-  try {
-    const prompts = JSON.parse(rawResponse) as string[];
-    return prompts.map(p => p.trim());
-  } catch (error) {
-    throw new Error(`Failed to parse image prompts from Gemini response: ${rawResponse}`);
+  if (output && Array.isArray(output.imagePrompts)) {
+    console.log('Successfully generated image prompts.');
+    return output;
+  } else {
+    console.error('Image prompt generation prompt returned invalid output format:', output);
+    return { imagePrompts: [] };
   }
+});
+
+// Exported Server Action (only async function allowed to export)
+export async function generateImagePrompts(
+  input: GenerateImagePromptsInput
+): Promise<GenerateImagePromptsOutput> {
+  return generateImagePromptsFlow(input);
 }
+
